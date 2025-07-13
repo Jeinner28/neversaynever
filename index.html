@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rifa 2x1 iPhone</title>
+  <link rel="stylesheet" href="styles.css">
+</head> 
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="navbar-container">
+         <a href="/index.html" id="navbar_logo">PURAMELMA.COM</a>
+            <div class="navbar-toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li class="navbar-item">
+                    <a href="/index.html" class="navbar-links">TICKETS DISPONIBLES</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/top-players.html" class="navbar-links">JUGADORES TOP</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="https://wa.link/0ka0xv" class="navbar-links" target="_blank">CONTACTO</a>
+                </li>
+            </ul>
+        </div>
+    </nav>  
+
+</header>
+
+<h1 class="product-title">Rifa 2x1 iPhone 12 Pro Max</h1>
+
+<!-- Sección de selección de tickets -->
+<div class="tabla">
+  <h2 class="product-paragraph">Al seleccionar 1 número de la tabla <br>
+  el equipo verificará su ticket <br>
+  Adicional obtendrá otro ticket de obsequio</h2>
+  <div class="ticket-grid" id="ticketGrid"></div>
+  <div class="button-container">
+  <button id="showSelection" disabled>Tickets Seleccionados</button>
+  </div>
+</div>
+
+<!-- Resumen de selección -->
+<div id="selectedTicketsContainer" class="hidden">
+  <h3>Tickets Seleccionados</h3>
+  <div class="seleccionados">
+  <div id="ticketListDisplay"></div>
+  <div id="total"></div>
+  </div>
+  <div class="button-container">
+  <button id="proceedBtn">COMPRAR TICKETS</button>
+  </div>
+</div>
+
+<!-- Formulario de pago -->
+<h3 id="este">Formulario de pago:</h3>
+<div id="paymentFormContainer" class="hidden">
+  <h3>Tickets seleccionados</h3>
+  <div id="ticketListInForm"></div>
+  <form id="paymentForm">
+    <label>Nombre y Apellido:
+      <input type="text" id="fullName" required>
+    </label>
+    <label>WhatsApp:
+      <input type="tel" id="phone" required>
+    </label>
+    <label>Correo Electrónico:
+      <input type="email" id="email" required>
+    </label>
+    <label>Método de Pago:
+      <select id="payMethod" required>
+        <option value="">Seleccionar</option>
+        <option value="Pago Móvil">Pago Móvil</option>
+        <option value="Zelle">Zelle</option>
+        <option value="Paypal">Paypal</option>
+        <option value="Binance">Binance</option>
+      </select>
+    </label>
+
+    <div id="bankDetails" class="hidden">
+      <h4>Datos del pago:</h4>
+      <div id="bankInfo"></div>
+    </div>
+
+    <label>Comprobante de pago:
+      <input type="file" id="paymentProof" accept="image/*" required onchange="if(this.files[0].size > 500000){ alert('La imagen no puede pesar más de 500 KB'); this.value = ''; }">
+    </label>
+    <button type="submit">Verificar Pago</button>
+  </form>
+</div>
+
+<!-- EmailJS SDK -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "ID PUBLICA",
+      });
+   })();
+</script>
+<script src="/index.js">
+ 
+</script>
+
+
+
+<!-- Ícono flotante de WhatsApp -->
+<a href="https://wa.me/569XXXXXXXX" target="_blank" id="whatsapp-float" aria-label="Chat en WhatsApp">
+  <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
+</a>
+
+</body>
+</html>
+
+
+
+
+
+
